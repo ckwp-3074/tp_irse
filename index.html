@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新ドメイン移行のお知らせ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .countdown {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>新しいページに転送してます</h1>
+    <h3>あと <span id="countdown">10</span> 秒で転送されます...</h3>
+    <p>今まで使用していた<a href="https://irse.iixd.jp">https://irse.iixd.jp</a>が、間もなくドメイン有効期限切れの為新しいドメインに移行します。</p>
+    <p>転送後、Webブラウザのブックマーク、ホーム画面への追加を新しく登録し直してください。</p>
+
+    <script>
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+
+        const intervalId = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown === 0) {
+                clearInterval(intervalId);
+                window.location.href = "http://irse.plok.jp";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
